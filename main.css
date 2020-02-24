@@ -52,6 +52,19 @@ h1{
 .linkkari{
     width: 10%;
 }
-.navigaatio{
-    text-align: right;
+navigaatio{
+    width: 70%;
+    height: 45px;
+    display: flex;
+    right: 20px;
+    float: right;
+    justify-content: flex-end;
+}
+
+.navigaatio ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
