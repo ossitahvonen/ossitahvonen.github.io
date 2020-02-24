@@ -22,6 +22,7 @@ ul {
     width: 25%;
     display: flex;
     justify-content: space-around;
+    border-radius: 50%;
     
 }
 header {
