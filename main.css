@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    background: blue ;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -22,4 +21,6 @@ ul {
 .ossi {
     width: 130px;
 }
+header {
 
+}
