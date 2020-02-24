@@ -40,3 +40,7 @@ h1{
     width: calc(100%-1em);
     display: block;
 }
+.paaosio{
+    border-radius: 30px;
+    height: 5%;
+}
