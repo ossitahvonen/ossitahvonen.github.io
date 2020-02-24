@@ -19,7 +19,10 @@ ul {
 
 }
 .ossi {
-    width: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    
 }
 header {
     display: flex;
