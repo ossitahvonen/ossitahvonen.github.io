@@ -35,3 +35,7 @@ h1{
 .yhteystiedot{
     background: #6DF564;
 }
+.kuvaossi{
+    width: calc(100%-1em);
+    display: block;
+}
