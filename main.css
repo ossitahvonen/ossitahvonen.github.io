@@ -2,5 +2,8 @@ body {
     margin: 0;
     background: blue ;
     font-family: sans-serif;
-    
+
+}
+p, blockquote {
+    font-size: .9em;
 }
