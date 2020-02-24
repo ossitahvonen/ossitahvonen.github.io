@@ -1,5 +1,4 @@
 body {
-    
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
@@ -29,4 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
+h1{
+    position: relative;
+    z-index: 3;
+}
