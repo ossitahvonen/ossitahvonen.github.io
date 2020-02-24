@@ -70,3 +70,6 @@ navigaatio{
     margin: 0;
     padding: 0;
 }
+.navigaatio li{
+    display: inline;
+}
