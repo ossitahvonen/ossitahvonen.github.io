@@ -38,7 +38,7 @@ h1{
 .yhteystiedot li {
     display: inline;
 }
-.kuvaossi{
+.kuvaossi ul{
     display: inline;
     background-image: image(url="images/adobestock_257957753_ynews.jpeg");
 }
