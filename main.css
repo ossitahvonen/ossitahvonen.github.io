@@ -39,9 +39,12 @@ h1{
 .yhteystiedot ul {
     display: inline;
 }
+.kuvaossi{
+    background-image: image(url="images/adobestock_257957753_ynews.jpeg");
+}
 .kuvaossi ul{
     display: inline;
-    background-image: image(url="images/adobestock_257957753_ynews.jpeg");
+    
 }
 .kaavakuva{
     border-radius: 30px;
