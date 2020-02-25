@@ -35,6 +35,9 @@ h1{
 .yhteystiedot{
     background: grey;
 }
+.yhteystiedot li {
+    display: inline;
+}
 .kuvaossi{
     width: calc(100%-1em);
     display: block;
