@@ -71,12 +71,10 @@ nav{
 }
 
 .navigaatio ul {
-    display: flex;
+    display: inline;
     justify-content: space-evenly;
     align-items: center;
     margin: 0;
     padding: 0;
 }
-.navigaatio li{
-    display: inline;
-}
+
