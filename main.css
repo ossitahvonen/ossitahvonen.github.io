@@ -36,7 +36,7 @@ h1{
 .yhteystiedot{
     background: #B6B8B9;
 }
-.yhteystiedot li {
+.yhteystiedot ul {
     display: inline;
 }
 .kuvaossi ul{
