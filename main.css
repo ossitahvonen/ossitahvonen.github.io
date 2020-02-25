@@ -39,8 +39,7 @@ h1{
     display: inline;
 }
 .kuvaossi{
-    width: calc(100%-1em);
-    display: block;
+    display: inline;
 }
 .kaavakuva{
     border-radius: 30px;
