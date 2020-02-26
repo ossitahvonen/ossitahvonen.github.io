@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-image: url="images/adobestock_257957753_ynews.jpeg";
+    background-image: url("images/adobestock_257957753_ynews.jpeg");
 }
 p, blockquote {
     font-size: .9em;
@@ -15,7 +15,7 @@ ul {
 
 .container {
     text-align: center;
-    padding: 0em 1.2em;
+    padding: 0em 0em;
     border-radius: 30px;
 }
 .ossi {
@@ -29,9 +29,12 @@ header {
     justify-content: space-between;
 }
 h1{
-
-    position: relative;
-    z-index: 3;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 49px;
+    line-height: 73px;
+    color: #544949;
+    margin-bottom: 0px;
 }
 .yhteystiedot{
     background: #B6B8B9;
