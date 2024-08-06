@@ -24,4 +24,9 @@ title: Research
 
 #### *Effects of Cash transfers for adolescents with health problems* <br/>
 <p style="font-size:70%;"><i> solo work </i></p>
-  
+
+ #### *The Long-term effects of long-term psychotherapy* <br/>
+<p style="font-size:70%;"><i> with Torsten Santavirta </i></p>
+
+#### *Debt enforcement and labor supply* <br/>
+<p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen, Terhi Maczulskij and Terhi Ravaska </i></p>
