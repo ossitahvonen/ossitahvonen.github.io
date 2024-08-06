@@ -6,7 +6,7 @@ title: Research
 <hr>
 <h3 style="color:#bf5700;"> Publications </h3>
 
-#### <a href="https://ossitahvonen.github.io/debt_burden_etla_WP.pdf"> *Gender Inequality Reinforced: The Impact of a Child&#39;s Health Shock on Parents&#39; Labor Market Trajectories. Demography 1 August 2023; 60 (4): 1005–1029.*</a> <br/>
+#### <a href="https://doi.org/10.1215/00703370-10828906"> *Gender Inequality Reinforced: The Impact of a Child&#39;s Health Shock on Parents&#39; Labor Market Trajectories. Demography 1 August 2023; 60 (4): 1005–1029.*</a> <br/>
  <p style="font-size:70%;"><i> with Maria Vaalavuo and Henri Salokangas. <br/>
    <a href="https://osf.io/preprints/socarxiv/wx83z">SocArXiv version</a> <a href="https://centers.purdue.edu/cff/initiatives/kanteraward/" >Finalist, Kanter award 2024 </i></p>
 
@@ -24,7 +24,7 @@ title: Research
  </p>
   </details>
 
-***
+
 <h3 style="color:#bf5700;"> Work in Progress </h3>
 
 #### *Effects of Cash transfers for adolescents with health problems* <br/>
