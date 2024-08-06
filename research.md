@@ -9,7 +9,11 @@ title: Research
 #### <a href="https://doi.org/10.1215/00703370-10828906"> *Gender Inequality Reinforced: The Impact of a Child&#39;s Health Shock on Parents&#39; Labor Market Trajectories. Demography 1 August 2023; 60 (4): 1005–1029.*</a> <br/>
  <p style="font-size:70%;"><i> with Maria Vaalavuo and Henri Salokangas. <br/>
    <a href="https://osf.io/preprints/socarxiv/wx83z">SocArXiv version</a> <a href="https://centers.purdue.edu/cff/initiatives/kanteraward/" >Finalist, Kanter award 2024 </i></p>
-
+<details>
+ <summary style="font-size:80%;"> Abstract </summary>
+      <p align="justify" style="font-size:80%;"> Some text
+ </p>
+  </details>
 
 <h3 style="color:#bf5700;"> Working Papers </h3>
 
