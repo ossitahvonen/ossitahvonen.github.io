@@ -1,26 +1,20 @@
-# Dependencies
-markdown:         redcarpet
-highlighter:      pygments
-
-# Permalinks
-permalink:        pretty
-relative_permalinks: true
-
 # Setup
-title:            Hyde
-tagline:          'A Jekyll theme'
-description:      'A brazen two-column <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that pairs a prominent sidebar with uncomplicated content. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:              http://hyde.getpoole.com
-baseurl:          /
-
-author:
-  name:           'Mark Otto'
-  url:            https://twitter.com/mdo
-
+title:            Ossi Tahvonen
+tagline:          Home
+description:      PhD student in <br/> University of Helsinki <br/> ossi.tahvonen@helsinki.fi
+url:              https://ossitahvonen.github.io
+baseurl:          ''
 paginate:         5
 
-# Custom vars
-version:          2.1.0
+# About and contact
+author:
+  name:           'Ossi Tahvonen'
+  url:            https://twitter.com/ossitahvonen
 
 github:
-  repo:           https://github.com/poole/hyde
+  repo:           https://github.com/ossitahvonen/ossitahvonen.github.io
+
+# Gems
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
