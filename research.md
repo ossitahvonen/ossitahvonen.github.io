@@ -17,6 +17,8 @@ title: Research
  </p>
   </details>
 
+***
+
 <h3 style="color:#bf5700;"> Working Papers </h3>
 
 #### <a href="https://ossitahvonen.github.io/debt_burden_etla_WP.pdf"> *Effects of job loss on incidence of debt problems* </a> <br/>
@@ -30,6 +32,7 @@ title: Research
  </p>
   </details>
 
+***
 
 <h3 style="color:#bf5700;"> Work in Progress </h3>
 
