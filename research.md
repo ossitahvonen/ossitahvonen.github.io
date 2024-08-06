@@ -39,7 +39,7 @@ title: Research
 ***
 <h3 style="color:#bf5700;"> Work in Progress </h3>
 
-#### *Effects of Cash transfers for adolescents with health problems* <br/>
+#### *Effects of cash transfers for adolescents with health problems* <br/>
 <p style="font-size:70%;"><i> solo work </i></p>
 
 #### *The Long-term effects of long-term psychotherapy* <br/>
