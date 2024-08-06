@@ -13,5 +13,5 @@ My research primarily focuses on mental health and adverse socioeconomic outcome
 
 ## Research Interests
 <p style="font-size:80%;">
-Health Economics, Public Economics, Economics of Crime
+Health Economics, Labor Economics, Economics of Crime
 </p>
