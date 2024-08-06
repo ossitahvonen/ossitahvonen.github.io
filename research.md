@@ -15,7 +15,7 @@ title: Research
 
 <details>
  <summary style="font-size:80%;"> Abstract </summary>
-      <p align="justify" style="font-size:80%;"> 
+      <p align="justify" style="font-size:80%;"> This article employs a couple-level framework to examine how a child's severe illness affects within-family gender inequality. We study parental labor market responses to a child's cancer diagnosis by exploiting an event-study methodology and rich individual-level administrative data on hospitalizations and labor market variables for the total population in Finland. We find that a child's cancer negatively affects the mother's and the father's labor income. The effect is considerably larger for women, increasing gender inequality beyond the well-documented motherhood penalty. We test three potential moderators explaining the more negative outcomes among mothers: (1) breadwinner status, (2) adherence to traditional gender roles and conservative values, and (3) the child's care needs. We find that mothers who are the main breadwinner experience a smaller reduction in their household income contribution than other mothers. Additionally, working in a gender-typical industry and a child's augmented care needs reinforce mothers' gendered responses. These findings contribute to the literature by providing new insights into gender roles when a child falls ill and demonstrating the effects of child health on gender inequality in two-parent households.
  </p>
   </details>
 
