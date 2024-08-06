@@ -31,10 +31,10 @@ title: Research
 <p style="font-size:70%;"><i> solo work </a> </i></p>
 
 #### *The Long-term effects of long-term psychotherapy* <br/>
-<p style="font-size:70%;"><i> with Torsten Santavirta < </a> </i></p>
+<p style="font-size:70%;"><i> with Torsten Santavirta </a> </i></p>
 
 #### *Debt enforcement and labor supply* <br/>
-<p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen, Terhi Maczulskij and Terhi Ravaska < </a> </i></p>
+<p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen, Terhi Maczulskij and Terhi Ravaska  </a> </i></p>
 
 #### *Antidepressants and socioeconomic outcomes* <br/>
 <p style="font-size:70%;"><i> solo work </a> </i></p>
