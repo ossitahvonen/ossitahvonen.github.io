@@ -10,7 +10,7 @@ title: Home
 My research primarily focuses on mental health and adverse socioeconomic outcomes. <br/> 
 <br/> 
   
-## Research Interests
+### Research Interests
 <p style="font-size:80%;">
 Health Economics, Labor Economics, Economics of Crime
 </p>
