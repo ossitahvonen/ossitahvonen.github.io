@@ -10,8 +10,8 @@ title: Research
 
 #### <a href="https://doi.org/10.1215/00703370-10828906"> *Gender Inequality Reinforced: The Impact of a Child's Health Shock on Parents' Labor Market Trajectories* Demography 1 August 2023; 60 (4): 1005–1029. </a> <br/>
  <p style="font-size:70%;"><i> with Maria Vaalavuo and Henri Salokangas.  <br/>
-  <a href="https://osf.io/preprints/socarxiv/wx83z">SocArXiv version</a> 
-  <a href="https://www.sylva.fi/lapsen-sairastuminen-syopaan-vahentaa-vanhempien-tuloja-aitien-tulot-ja-tyollisyys-matalampia-jopa-viisi-vuotta-sairastumisesta/" >Popular summary (in Finnish) </a> 
+  <a href="https://osf.io/preprints/socarxiv/wx83z">SocArXiv version</a>  <br/>
+  <a href="https://www.sylva.fi/lapsen-sairastuminen-syopaan-vahentaa-vanhempien-tuloja-aitien-tulot-ja-tyollisyys-matalampia-jopa-viisi-vuotta-sairastumisesta/" >Popular summary (in Finnish) </a> <br/>
   <a href="https://centers.purdue.edu/cff/initiatives/kanteraward/" >Finalist, Kanter award 2024 </a> </i></p>
 
 
