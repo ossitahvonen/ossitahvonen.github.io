@@ -8,7 +8,6 @@ title: Home
 <br/>  
   
 My research primarily focuses on mental health and adverse socioeconomic outcomes. <br/> 
-<br/> 
 
 ## Research Interests
 <p style="font-size:80%;">
