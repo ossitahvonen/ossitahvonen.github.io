@@ -49,3 +49,8 @@ title: Research
 
 #### *Debt enforcement and labor supply* <br/>
 <p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen, Terhi Maczulskij and Terhi Ravaska </i></p>
+<details>
+ <summary style="font-size:80%;"> Abstract </summary>
+      <p align="justify" style="font-size:80%;"> This paper examines labor supply responses to wage garnishment, a debt enforcement tool. This parameter is a key component in understanding welfare effects of debt enforcement, as we show in a Baily-Chetty style sufficient statistics model. Using population-wide data and exploiting budget set discontinuities from garnishment rules, we observe positive bunching at convex kink points and significant negative bunching at non-convex kink points. The behavioral responses are modest and vary by occupation, initial debt, and number of dependents. Our estimates of labor supply elasticity with respect to net earnings range from 0.006 to 0.08. To our knowledge, this is the first study to document notable negative bunching at non-convex kink points and to provide credible labor supply elasticity estimates in a debt enforcement context.
+ </p>
+  </details>
