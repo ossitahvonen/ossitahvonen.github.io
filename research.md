@@ -27,7 +27,7 @@ title: Research
 <h3 style="color:#bf5700;"> Working Papers </h3>
 
 #### <a href="https://ossitahvonen.github.io/debt_burden_etla_WP.pdf"> *Debt burden of job loss in a Nordic Welfare State*</a> <br/>
- <p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen and Terhi Maczulskij  <br/>
+ <p style="font-size:70%;"><i> with Ohto Kanninen, Hannu Karhunen and Terhi Maczulskij (Submitted) <br/>
   </i></p>
 
 
