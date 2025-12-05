@@ -46,7 +46,7 @@ title: Research
 
 #### *The Long-term effects of long-term psychotherapy* <br/>
 <p style="font-size:70%;"><i> with Torsten Santavirta </i></p>
-<p style="font-size:70%;"><i> href="https://github.com/ossitahvonen/ossitahvonen.github.io/blob/71cadfedbb4c4aa61187ed1ce1d3e485a0313f2e/tietosuojailmoitus_20251205.pdf">Tietosuojaseloste</a>  </i></p>
+  <a style="font-size:70%;"><i> href="https://github.com/ossitahvonen/ossitahvonen.github.io/blob/71cadfedbb4c4aa61187ed1ce1d3e485a0313f2e/tietosuojailmoitus_20251205.pdf">Tietosuojaseloste</a>  </i></p>
 
 
 #### *Debt enforcement and labor supply* <br/>
