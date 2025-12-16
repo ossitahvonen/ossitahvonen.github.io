@@ -58,6 +58,8 @@ title: Research
  </p>
   </details>
 
+
+
   #### *Health "shocks"* <br/>
 <p style="font-size:70%;"><i> with Martin Halla and Henri Salokangas <br/>
 </i></p>
