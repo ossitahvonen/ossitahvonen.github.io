@@ -9,9 +9,7 @@ if (!gate || !form || !input || !errorText) {
   throw new Error("Password gate markup is missing.");
 }
 
-const alreadyUnlocked = sessionStorage.getItem(authConfig.storageKey) === "ok";
-
-if (!authConfig.enabled || alreadyUnlocked) {
+if (!authConfig.enabled) {
   unlockGate();
 } else {
   lockGate();
@@ -25,7 +23,6 @@ form.addEventListener("submit", async (event) => {
   const candidateHash = await sha256Hex(candidate);
 
   if (candidateHash === authConfig.passwordHash) {
-    sessionStorage.setItem(authConfig.storageKey, "ok");
     unlockGate();
     input.value = "";
     return;
