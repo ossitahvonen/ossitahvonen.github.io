@@ -1,0 +1,16 @@
+[
+  { "date": "21.5.2026", "time": "12:05:00", "measured_at": "2026-05-21T12:05:00+03:00", "timestamp_unix": 1779354300, "measure_g": 2910, "weight_kg": 2.910, "source": "Clinic" },
+  { "date": "23.5.2026", "time": "13:00:00", "measured_at": "2026-05-23T13:00:00+03:00", "timestamp_unix": 1779530400, "measure_g": 2835, "weight_kg": 2.835, "source": "Clinic" },
+  { "date": "26.5.2026", "time": "13:00:00", "measured_at": "2026-05-26T13:00:00+03:00", "timestamp_unix": 1779789600, "measure_g": 3030, "weight_kg": 3.030, "source": "Clinic" },
+  { "date": "28.5.2026", "time": "12:30:00", "measured_at": "2026-05-28T12:30:00+03:00", "timestamp_unix": 1779960600, "measure_g": 3080, "weight_kg": 3.080, "source": "Home" },
+  { "date": "29.5.2026", "time": "21:30:00", "measured_at": "2026-05-29T21:30:00+03:00", "timestamp_unix": 1780079400, "measure_g": 3120, "weight_kg": 3.120, "source": "Home" },
+  { "date": "30.5.2026", "time": "10:15:00", "measured_at": "2026-05-30T10:15:00+03:00", "timestamp_unix": 1780125300, "measure_g": 3048, "weight_kg": 3.048, "source": "Home" },
+  { "date": "31.5.2026", "time": "10:00:00", "measured_at": "2026-05-31T10:00:00+03:00", "timestamp_unix": 1780210800, "measure_g": 3050, "weight_kg": 3.050, "source": "Home" },
+  { "date": "31.5.2026", "time": "22:00:00", "measured_at": "2026-05-31T22:00:00+03:00", "timestamp_unix": 1780254000, "measure_g": 3245, "weight_kg": 3.245, "source": "Home" },
+  { "date": "1.6.2026", "time": "11:15:00", "measured_at": "2026-06-01T11:15:00+03:00", "timestamp_unix": 1780301700, "measure_g": 3238, "weight_kg": 3.238, "source": "Home" },
+  { "date": "1.6.2026", "time": "19:30:00", "measured_at": "2026-06-01T19:30:00+03:00", "timestamp_unix": 1780331400, "measure_g": 3240, "weight_kg": 3.240, "source": "Home" },
+  { "date": "2.6.2026", "time": "09:30:00", "measured_at": "2026-06-02T09:30:00+03:00", "timestamp_unix": 1780381800, "measure_g": 3282, "weight_kg": 3.282, "source": "Home" },
+  { "date": "2.6.2026", "time": "19:30:00", "measured_at": "2026-06-02T19:30:00+03:00", "timestamp_unix": 1780417800, "measure_g": 3320, "weight_kg": 3.320, "source": "Home" },
+  { "date": "3.6.2026", "time": "10:20:00", "measured_at": "2026-06-03T10:20:00+03:00", "timestamp_unix": 1780471200, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" }
+]
+

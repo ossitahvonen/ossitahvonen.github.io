@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Johannes' Weight Tracker</title>
+    <meta
+      name="description"
+      content="Interactive baby weight graph for Johannes, powered by static files that can be hosted on GitHub Pages."
+    >
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="page-glow page-glow-left"></div>
+      <div class="page-glow page-glow-right"></div>
+
+      <main class="layout">
+        <section class="hero">
+          <p class="eyebrow">GitHub Pages Ready</p>
+          <h1>Johannes' Weight Tracker</h1>
+          <p class="hero-copy">
+            An interactive growth graph generated from the same measurement file as the R plot.
+            Hover any point for details, switch units, or focus on clinic versus home weigh-ins.
+          </p>
+        </section>
+
+        <section class="control-bar" aria-label="Chart controls">
+          <div class="control-group">
+            <span class="control-label">Measurements</span>
+            <div class="pill-row" id="source-controls">
+              <button class="pill is-active" data-source="All" type="button">All</button>
+              <button class="pill" data-source="Home" type="button">Home</button>
+              <button class="pill" data-source="Clinic" type="button">Clinic</button>
+            </div>
+          </div>
+
+          <div class="control-group">
+            <span class="control-label">Units</span>
+            <div class="pill-row" id="unit-controls">
+              <button class="pill is-active" data-unit="kg" type="button">Kilograms</button>
+              <button class="pill" data-unit="g" type="button">Grams</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="stats-grid" id="stats-grid" aria-live="polite">
+          <article class="stat-card">
+            <span class="stat-label">Latest</span>
+            <strong class="stat-value" id="stat-latest">--</strong>
+            <span class="stat-foot" id="stat-latest-foot">--</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">From First</span>
+            <strong class="stat-value" id="stat-first">--</strong>
+            <span class="stat-foot" id="stat-first-foot">--</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">From Lowest</span>
+            <strong class="stat-value" id="stat-lowest">--</strong>
+            <span class="stat-foot" id="stat-lowest-foot">--</span>
+          </article>
+          <article class="stat-card">
+            <span class="stat-label">Measurements Shown</span>
+            <strong class="stat-value" id="stat-count">--</strong>
+            <span class="stat-foot" id="stat-count-foot">--</span>
+          </article>
+        </section>
+
+        <section class="chart-card">
+          <div class="chart-header">
+            <div>
+              <p class="chart-kicker" id="chart-kicker">All measurements</p>
+              <h2 id="chart-title">Weight over time</h2>
+            </div>
+            <div class="legend">
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-home"></span>
+                Home
+              </span>
+              <span class="legend-item">
+                <span class="legend-dot legend-dot-clinic"></span>
+                Clinic
+              </span>
+            </div>
+          </div>
+
+          <div class="chart-stage">
+            <div class="chart-tooltip" id="chart-tooltip" hidden></div>
+            <svg
+              id="weight-chart"
+              viewBox="0 0 960 560"
+              role="img"
+              aria-labelledby="chart-title"
+              preserveAspectRatio="xMidYMid meet"
+            ></svg>
+          </div>
+        </section>
+
+        <section class="notes-card">
+          <p>
+            To publish this on GitHub Pages, commit the <code>docs/</code> folder and set Pages to
+            serve from the repository’s <code>docs</code> directory.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

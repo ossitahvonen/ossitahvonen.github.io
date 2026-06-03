@@ -1,0 +1,369 @@
+:root {
+  --page-bg: #f7f0e6;
+  --card-bg: rgba(255, 251, 245, 0.82);
+  --card-border: rgba(51, 46, 37, 0.08);
+  --ink-strong: #203b66;
+  --ink-body: #536277;
+  --ink-soft: #7b8797;
+  --home: #4e79a7;
+  --clinic: #e7831e;
+  --grid: rgba(41, 57, 84, 0.1);
+  --shadow: 0 22px 50px rgba(53, 43, 26, 0.09);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 34%),
+    radial-gradient(circle at bottom right, rgba(244, 211, 158, 0.26), transparent 28%),
+    linear-gradient(180deg, #f9f3ea 0%, #f4ecdf 100%);
+  color: var(--ink-body);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+code {
+  font-family: "SFMono-Regular", "Menlo", monospace;
+}
+
+.page-shell {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-glow {
+  position: absolute;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 999px;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.page-glow-left {
+  top: -8rem;
+  left: -10rem;
+  background: rgba(87, 128, 187, 0.32);
+}
+
+.page-glow-right {
+  right: -8rem;
+  bottom: 8rem;
+  background: rgba(231, 131, 30, 0.18);
+}
+
+.layout {
+  position: relative;
+  z-index: 1;
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.hero h1,
+.chart-header h2 {
+  margin: 0;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  letter-spacing: -0.03em;
+  color: var(--ink-strong);
+}
+
+.hero {
+  max-width: 52rem;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5vw, 4.6rem);
+  line-height: 0.95;
+}
+
+.eyebrow,
+.chart-kicker,
+.control-label,
+.stat-label {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.hero-copy {
+  margin: 1rem 0 0;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  max-width: 44rem;
+}
+
+.control-bar,
+.chart-card,
+.notes-card,
+.stat-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(18px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+.control-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius-lg);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.pill-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  border: 1px solid rgba(37, 59, 96, 0.12);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink-body);
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+
+.pill:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 59, 96, 0.22);
+}
+
+.pill.is-active {
+  background: #233e69;
+  border-color: #233e69;
+  color: white;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.stat-card {
+  padding: 1.15rem 1.2rem;
+  border-radius: var(--radius-md);
+}
+
+.stat-value {
+  display: block;
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  color: var(--ink-strong);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.05;
+}
+
+.stat-foot {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.chart-card {
+  border-radius: calc(var(--radius-lg) + 4px);
+  padding: 1.4rem 1.4rem 1rem;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.legend {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--ink-body);
+}
+
+.legend-dot {
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.legend-dot-home {
+  background: var(--home);
+}
+
+.legend-dot-clinic {
+  background: var(--clinic);
+}
+
+.chart-stage {
+  position: relative;
+}
+
+#weight-chart {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.chart-tooltip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 14px));
+  background: rgba(23, 31, 47, 0.96);
+  color: white;
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  box-shadow: 0 16px 34px rgba(12, 18, 28, 0.26);
+  min-width: 12rem;
+  pointer-events: none;
+}
+
+.chart-tooltip strong {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.chart-tooltip span {
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.notes-card {
+  margin-top: 1.25rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  color: var(--ink-soft);
+}
+
+.axis-label,
+.tick-label {
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  fill: var(--ink-soft);
+}
+
+.grid-line {
+  stroke: var(--grid);
+  stroke-width: 1;
+}
+
+.axis-line {
+  stroke: rgba(32, 59, 102, 0.16);
+  stroke-width: 1.2;
+}
+
+.series-line {
+  fill: none;
+  stroke: var(--home);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.series-point {
+  cursor: pointer;
+  stroke: white;
+  stroke-width: 4;
+  transition: transform 120ms ease, r 120ms ease, stroke-width 120ms ease;
+}
+
+.series-point.source-home {
+  fill: var(--home);
+}
+
+.series-point.source-clinic {
+  fill: var(--clinic);
+}
+
+.series-point.is-hovered {
+  stroke-width: 6;
+}
+
+.latest-pill rect {
+  fill: rgba(255, 255, 255, 0.92);
+}
+
+.latest-pill text {
+  fill: var(--ink-strong);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.empty-state {
+  font-size: 18px;
+  fill: var(--ink-soft);
+}
+
+@media (max-width: 860px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chart-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .layout {
+    width: min(100% - 1rem, 1120px);
+    padding-top: 1.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-bar,
+  .chart-card,
+  .notes-card,
+  .stat-card {
+    border-radius: 22px;
+  }
+
+  .chart-card {
+    padding: 1.1rem 0.85rem 0.8rem;
+  }
+}
