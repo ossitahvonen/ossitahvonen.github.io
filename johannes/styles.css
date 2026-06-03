@@ -29,6 +29,10 @@ body {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
 }
 
+body.gate-locked {
+  overflow: hidden;
+}
+
 code {
   font-family: "SFMono-Regular", "Menlo", monospace;
 }
@@ -66,9 +70,17 @@ code {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 3rem 0 4rem;
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+body.gate-locked .layout {
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(16px);
 }
 
 .hero h1,
+.auth-card h2,
 .chart-header h2 {
   margin: 0;
   font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -78,7 +90,7 @@ code {
 
 .hero {
   max-width: 52rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .hero h1 {
@@ -86,7 +98,7 @@ code {
   line-height: 0.95;
 }
 
-.eyebrow,
+.auth-eyebrow,
 .chart-kicker,
 .control-label,
 .stat-label {
@@ -98,16 +110,87 @@ code {
   color: var(--ink-soft);
 }
 
-.hero-copy {
-  margin: 1rem 0 0;
-  font-size: 1.08rem;
-  line-height: 1.65;
-  max-width: 44rem;
+.auth-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(247, 240, 230, 0.78);
+  backdrop-filter: blur(18px);
+}
+
+.auth-gate[hidden] {
+  display: none;
+}
+
+.auth-card {
+  width: min(100%, 28rem);
+  padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 251, 245, 0.92);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow);
+}
+
+.auth-card h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 0.95;
+}
+
+.auth-copy {
+  margin: 0.95rem 0 1.2rem;
+  line-height: 1.6;
+}
+
+.auth-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.auth-label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--ink-body);
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(37, 59, 96, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--ink-strong);
+  font: inherit;
+}
+
+.auth-input:focus {
+  outline: 2px solid rgba(35, 62, 105, 0.2);
+  border-color: rgba(35, 62, 105, 0.32);
+}
+
+.auth-button {
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: #233e69;
+  color: white;
+  padding: 0.85rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-error {
+  margin: 0;
+  color: #a23723;
+  font-size: 0.92rem;
+  font-weight: 600;
 }
 
 .control-bar,
 .chart-card,
-.notes-card,
 .stat-card {
   background: var(--card-bg);
   backdrop-filter: blur(18px);
@@ -270,17 +353,19 @@ code {
   line-height: 1.45;
 }
 
-.notes-card {
-  margin-top: 1.25rem;
-  padding: 1rem 1.2rem;
-  border-radius: var(--radius-md);
-  color: var(--ink-soft);
-}
-
 .axis-label,
 .tick-label {
   font-family: "Avenir Next", "Segoe UI", sans-serif;
   fill: var(--ink-soft);
+}
+
+.axis-label {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.tick-label {
+  font-size: 14px;
 }
 
 .grid-line {
@@ -352,13 +437,16 @@ code {
     padding-bottom: 2rem;
   }
 
+  .auth-card {
+    padding: 1.2rem;
+  }
+
   .stats-grid {
     grid-template-columns: 1fr;
   }
 
   .control-bar,
   .chart-card,
-  .notes-card,
   .stat-card {
     border-radius: 22px;
   }

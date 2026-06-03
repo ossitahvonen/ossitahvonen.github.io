@@ -15,14 +15,30 @@
       <div class="page-glow page-glow-left"></div>
       <div class="page-glow page-glow-right"></div>
 
+      <section class="auth-gate" id="auth-gate" aria-live="polite">
+        <div class="auth-card">
+          <p class="auth-eyebrow">Shared Access</p>
+          <h2>Johannes' Weight Tracker</h2>
+          <p class="auth-copy">Enter the shared password to view this page.</p>
+          <form class="auth-form" id="auth-form">
+            <label class="auth-label" for="auth-password">Password</label>
+            <input
+              class="auth-input"
+              id="auth-password"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              required
+            >
+            <button class="auth-button" type="submit">Open Page</button>
+            <p class="auth-error" id="auth-error" hidden>Wrong password. Try again.</p>
+          </form>
+        </div>
+      </section>
+
       <main class="layout">
         <section class="hero">
-          <p class="eyebrow">GitHub Pages Ready</p>
           <h1>Johannes' Weight Tracker</h1>
-          <p class="hero-copy">
-            An interactive growth graph generated from the same measurement file as the R plot.
-            Hover any point for details, switch units, or focus on clinic versus home weigh-ins.
-          </p>
         </section>
 
         <section class="control-bar" aria-label="Chart controls">
@@ -96,16 +112,10 @@
             ></svg>
           </div>
         </section>
-
-        <section class="notes-card">
-          <p>
-            To publish this on GitHub Pages, commit the <code>docs/</code> folder and set Pages to
-            serve from the repository’s <code>docs</code> directory.
-          </p>
-        </section>
       </main>
     </div>
 
+    <script src="./auth-gate.js" type="module"></script>
     <script src="./app.js" type="module"></script>
   </body>
 </html>

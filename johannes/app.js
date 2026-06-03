@@ -30,7 +30,7 @@ const state = {
 const chartBox = {
   width: 960,
   height: 560,
-  margin: { top: 32, right: 32, bottom: 88, left: 86 }
+  margin: { top: 32, right: 32, bottom: 88, left: 112 }
 };
 
 const tickFormatter = {
@@ -288,9 +288,11 @@ function drawAxes(scaleX, scaleY, data, yMin, yMax) {
   });
 
   const yAxisLabel = createSvgNode("text", {
-    x: 26,
-    y: chartBox.margin.top + 4,
-    class: "axis-label"
+    x: 28,
+    y: chartBox.margin.top + innerHeight / 2,
+    "text-anchor": "middle",
+    class: "axis-label",
+    transform: `rotate(-90 28 ${chartBox.margin.top + innerHeight / 2})`
   });
   yAxisLabel.textContent = state.unit === "kg" ? "Weight (kg)" : "Weight (g)";
   group.append(yAxisLabel);
