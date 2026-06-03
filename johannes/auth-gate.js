@@ -4,8 +4,9 @@ const gate = document.querySelector("#auth-gate");
 const form = document.querySelector("#auth-form");
 const input = document.querySelector("#auth-password");
 const errorText = document.querySelector("#auth-error");
+const protectedContent = document.querySelector("#protected-content");
 
-if (!gate || !form || !input || !errorText) {
+if (!gate || !form || !input || !errorText || !protectedContent) {
   throw new Error("Password gate markup is missing.");
 }
 
@@ -34,6 +35,7 @@ form.addEventListener("submit", async (event) => {
 
 function lockGate() {
   document.body.classList.add("gate-locked");
+  protectedContent.hidden = true;
   gate.hidden = false;
   window.requestAnimationFrame(() => {
     input.focus();
@@ -42,6 +44,7 @@ function lockGate() {
 
 function unlockGate() {
   document.body.classList.remove("gate-locked");
+  protectedContent.hidden = false;
   gate.hidden = true;
 }
 
