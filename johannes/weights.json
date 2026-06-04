@@ -11,6 +11,7 @@
   { "date": "1.6.2026", "time": "19:30:00", "measured_at": "2026-06-01T19:30:00+03:00", "timestamp_unix": 1780331400, "measure_g": 3240, "weight_kg": 3.240, "source": "Home" },
   { "date": "2.6.2026", "time": "09:30:00", "measured_at": "2026-06-02T09:30:00+03:00", "timestamp_unix": 1780381800, "measure_g": 3282, "weight_kg": 3.282, "source": "Home" },
   { "date": "2.6.2026", "time": "19:30:00", "measured_at": "2026-06-02T19:30:00+03:00", "timestamp_unix": 1780417800, "measure_g": 3320, "weight_kg": 3.320, "source": "Home" },
-  { "date": "3.6.2026", "time": "10:20:00", "measured_at": "2026-06-03T10:20:00+03:00", "timestamp_unix": 1780471200, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" }
+  { "date": "3.6.2026", "time": "10:20:00", "measured_at": "2026-06-03T10:20:00+03:00", "timestamp_unix": 1780471200, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" },
+  { "date": "3.6.2026", "time": "23:20:00", "measured_at": "2026-06-03T23:20:00+03:00", "timestamp_unix": 1780518000, "measure_g": 3406, "weight_kg": 3.406, "source": "Home" }
 ]
 
