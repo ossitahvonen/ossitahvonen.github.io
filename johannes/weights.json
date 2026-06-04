@@ -1,17 +1,17 @@
 [
-  { "date": "21.5.2026", "time": "12:05:00", "measured_at": "2026-05-21T12:05:00+03:00", "timestamp_unix": 1779354300, "measure_g": 2910, "weight_kg": 2.910, "source": "Clinic" },
-  { "date": "23.5.2026", "time": "13:00:00", "measured_at": "2026-05-23T13:00:00+03:00", "timestamp_unix": 1779530400, "measure_g": 2835, "weight_kg": 2.835, "source": "Clinic" },
-  { "date": "26.5.2026", "time": "13:00:00", "measured_at": "2026-05-26T13:00:00+03:00", "timestamp_unix": 1779789600, "measure_g": 3030, "weight_kg": 3.030, "source": "Clinic" },
-  { "date": "28.5.2026", "time": "12:30:00", "measured_at": "2026-05-28T12:30:00+03:00", "timestamp_unix": 1779960600, "measure_g": 3080, "weight_kg": 3.080, "source": "Home" },
-  { "date": "29.5.2026", "time": "21:30:00", "measured_at": "2026-05-29T21:30:00+03:00", "timestamp_unix": 1780079400, "measure_g": 3120, "weight_kg": 3.120, "source": "Home" },
-  { "date": "30.5.2026", "time": "10:15:00", "measured_at": "2026-05-30T10:15:00+03:00", "timestamp_unix": 1780125300, "measure_g": 3048, "weight_kg": 3.048, "source": "Home" },
-  { "date": "31.5.2026", "time": "10:00:00", "measured_at": "2026-05-31T10:00:00+03:00", "timestamp_unix": 1780210800, "measure_g": 3050, "weight_kg": 3.050, "source": "Home" },
-  { "date": "31.5.2026", "time": "22:00:00", "measured_at": "2026-05-31T22:00:00+03:00", "timestamp_unix": 1780254000, "measure_g": 3245, "weight_kg": 3.245, "source": "Home" },
-  { "date": "1.6.2026", "time": "11:15:00", "measured_at": "2026-06-01T11:15:00+03:00", "timestamp_unix": 1780301700, "measure_g": 3238, "weight_kg": 3.238, "source": "Home" },
-  { "date": "1.6.2026", "time": "19:30:00", "measured_at": "2026-06-01T19:30:00+03:00", "timestamp_unix": 1780331400, "measure_g": 3240, "weight_kg": 3.240, "source": "Home" },
-  { "date": "2.6.2026", "time": "09:30:00", "measured_at": "2026-06-02T09:30:00+03:00", "timestamp_unix": 1780381800, "measure_g": 3282, "weight_kg": 3.282, "source": "Home" },
-  { "date": "2.6.2026", "time": "19:30:00", "measured_at": "2026-06-02T19:30:00+03:00", "timestamp_unix": 1780417800, "measure_g": 3320, "weight_kg": 3.320, "source": "Home" },
-  { "date": "3.6.2026", "time": "10:20:00", "measured_at": "2026-06-03T10:20:00+03:00", "timestamp_unix": 1780471200, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" },
-  { "date": "3.6.2026", "time": "23:20:00", "measured_at": "2026-06-03T23:20:00+03:00", "timestamp_unix": 1780518000, "measure_g": 3406, "weight_kg": 3.406, "source": "Home" }
+  { "age_hours": 0.000000, "age_days": 0.000000, "measure_g": 2910, "weight_kg": 2.910, "source": "Clinic" },
+  { "age_hours": 48.916667, "age_days": 2.038194, "measure_g": 2835, "weight_kg": 2.835, "source": "Clinic" },
+  { "age_hours": 120.916667, "age_days": 5.038194, "measure_g": 3030, "weight_kg": 3.030, "source": "Clinic" },
+  { "age_hours": 168.416667, "age_days": 7.017361, "measure_g": 3080, "weight_kg": 3.080, "source": "Home" },
+  { "age_hours": 201.416667, "age_days": 8.392361, "measure_g": 3120, "weight_kg": 3.120, "source": "Home" },
+  { "age_hours": 214.166667, "age_days": 8.923611, "measure_g": 3048, "weight_kg": 3.048, "source": "Home" },
+  { "age_hours": 237.916667, "age_days": 9.913194, "measure_g": 3050, "weight_kg": 3.050, "source": "Home" },
+  { "age_hours": 249.916667, "age_days": 10.413194, "measure_g": 3245, "weight_kg": 3.245, "source": "Home" },
+  { "age_hours": 263.166667, "age_days": 10.965278, "measure_g": 3238, "weight_kg": 3.238, "source": "Home" },
+  { "age_hours": 271.416667, "age_days": 11.309028, "measure_g": 3240, "weight_kg": 3.240, "source": "Home" },
+  { "age_hours": 285.416667, "age_days": 11.892361, "measure_g": 3282, "weight_kg": 3.282, "source": "Home" },
+  { "age_hours": 295.416667, "age_days": 12.309028, "measure_g": 3320, "weight_kg": 3.320, "source": "Home" },
+  { "age_hours": 310.250000, "age_days": 12.927083, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" },
+  { "age_hours": 323.250000, "age_days": 13.468750, "measure_g": 3406, "weight_kg": 3.406, "source": "Home" }
 ]
 

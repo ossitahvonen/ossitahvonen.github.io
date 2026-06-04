@@ -14,14 +14,6 @@ const statCountFoot = document.querySelector("#stat-count-foot");
 const chartKicker = document.querySelector("#chart-kicker");
 const chartTitle = document.querySelector("#chart-title");
 
-const palette = {
-  Home: "#4e79a7",
-  Clinic: "#e7831e",
-  Ink: "#203b66",
-  Grid: "rgba(41, 57, 84, 0.1)",
-  Axis: "rgba(32, 59, 102, 0.16)"
-};
-
 const state = {
   source: "All",
   unit: "kg"
@@ -63,11 +55,12 @@ fetch("./weights.json")
     allWeights = data
       .map((row) => ({
         ...row,
-        timestampUnix: Number(row.timestamp_unix),
+        ageHours: Number(row.age_hours),
+        ageDays: Number(row.age_days),
         measureG: Number(row.measure_g),
         weightKg: Number(row.weight_kg)
       }))
-      .sort((a, b) => a.timestampUnix - b.timestampUnix);
+      .sort((a, b) => a.ageHours - b.ageHours);
 
     bindControls();
     render();
@@ -142,11 +135,11 @@ function renderStats(data) {
   const lowestDelta = getUnitValue(latest) - getUnitValue(lowest);
 
   statLatest.textContent = shortValue[state.unit](latestValue);
-  statLatestFoot.textContent = `${latest.date} at ${latest.time}`;
+  statLatestFoot.textContent = `Age ${formatAgeCompact(latest.ageHours)}`;
   statFirst.textContent = formatDelta(firstDelta, state.unit);
-  statFirstFoot.textContent = `Since ${first.date}`;
+  statFirstFoot.textContent = "Since birth";
   statLowest.textContent = formatDelta(lowestDelta, state.unit);
-  statLowestFoot.textContent = `Lowest was ${shortValue[state.unit](getUnitValue(lowest))}`;
+  statLowestFoot.textContent = `Lowest at age ${formatAgeCompact(lowest.ageHours)}`;
   statCount.textContent = String(data.length);
   statCountFoot.textContent = sourceLabel[state.source];
 }
@@ -172,7 +165,7 @@ function renderChart(data) {
   const innerWidth = chartBox.width - chartBox.margin.left - chartBox.margin.right;
   const innerHeight = chartBox.height - chartBox.margin.top - chartBox.margin.bottom;
 
-  const xValues = data.map((row) => row.timestampUnix);
+  const xValues = data.map((row) => row.ageHours);
   const yValues = data.map((row) => getUnitValue(row));
   const xMin = Math.min(...xValues);
   const xMax = Math.max(...xValues);
@@ -199,7 +192,7 @@ function renderChart(data) {
   };
 
   drawYGrid(scaleY, yMin, yMax);
-  drawAxes(scaleX, scaleY, data, yMin, yMax);
+  drawAxes(scaleX, scaleY, data, innerHeight);
   drawSeries(scaleX, scaleY, data);
   drawLatestPill(scaleX, scaleY, data[data.length - 1]);
 }
@@ -233,7 +226,7 @@ function drawYGrid(scaleY, yMin, yMax) {
   svg.append(group);
 }
 
-function drawAxes(scaleX, scaleY, data, yMin, yMax) {
+function drawAxes(scaleX, scaleY, data, innerHeight) {
   const group = createSvgNode("g");
   const axisBottomY = chartBox.height - chartBox.margin.bottom;
   const axisLeftX = chartBox.margin.left;
@@ -258,10 +251,10 @@ function drawAxes(scaleX, scaleY, data, yMin, yMax) {
     })
   );
 
-  const tickData = pickTimeTicks(data, window.innerWidth < 640 ? 4 : 6);
+  const tickData = pickAgeTicks(data, window.innerWidth < 640 ? 4 : 6);
 
   tickData.forEach((row) => {
-    const x = scaleX(row.timestampUnix);
+    const x = scaleX(row.ageHours);
     group.append(
       createSvgNode("line", {
         x1: x,
@@ -279,10 +272,11 @@ function drawAxes(scaleX, scaleY, data, yMin, yMax) {
       class: "tick-label"
     });
 
+    const [lineOne, lineTwo] = formatAgeMultiline(row.ageHours);
     const firstLine = createSvgNode("tspan", { x, dy: 0 });
-    firstLine.textContent = row.date;
+    firstLine.textContent = lineOne;
     const secondLine = createSvgNode("tspan", { x, dy: 20 });
-    secondLine.textContent = row.time.slice(0, 5);
+    secondLine.textContent = lineTwo;
     text.append(firstLine, secondLine);
     group.append(text);
   });
@@ -303,7 +297,7 @@ function drawAxes(scaleX, scaleY, data, yMin, yMax) {
     "text-anchor": "end",
     class: "axis-label"
   });
-  xAxisLabel.textContent = `${data[0].date} to ${data[data.length - 1].date}`;
+  xAxisLabel.textContent = "Age from birth";
   group.append(xAxisLabel);
 
   svg.append(group);
@@ -320,7 +314,7 @@ function drawSeries(scaleX, scaleY, data) {
 
   data.forEach((row) => {
     const circle = createSvgNode("circle", {
-      cx: scaleX(row.timestampUnix),
+      cx: scaleX(row.ageHours),
       cy: scaleY(getUnitValue(row)),
       r: 9,
       class: `series-point source-${row.source.toLowerCase()}`
@@ -348,7 +342,7 @@ function drawSeries(scaleX, scaleY, data) {
 
 function drawLatestPill(scaleX, scaleY, row) {
   const group = createSvgNode("g", { class: "latest-pill" });
-  const x = Math.min(scaleX(row.timestampUnix) + 14, chartBox.width - chartBox.margin.right - 188);
+  const x = Math.min(scaleX(row.ageHours) + 14, chartBox.width - chartBox.margin.right - 188);
   const y = Math.max(scaleY(getUnitValue(row)) - 46, chartBox.margin.top + 12);
   const label = `Latest: ${shortValue[state.unit](getUnitValue(row))}`;
 
@@ -376,7 +370,7 @@ function buildPath(data, scaleX, scaleY) {
   return data
     .map((row, index) => {
       const command = index === 0 ? "M" : "L";
-      return `${command}${scaleX(row.timestampUnix).toFixed(2)},${scaleY(getUnitValue(row)).toFixed(2)}`;
+      return `${command}${scaleX(row.ageHours).toFixed(2)},${scaleY(getUnitValue(row)).toFixed(2)}`;
     })
     .join(" ");
 }
@@ -385,7 +379,7 @@ function showTooltip(row, event) {
   tooltip.hidden = false;
   tooltip.innerHTML = `
     <strong>${shortValue[state.unit](getUnitValue(row))}</strong>
-    <span>${row.date} at ${row.time.slice(0, 5)}</span>
+    <span>Age ${formatAgeCompact(row.ageHours)}</span>
     <span>${row.source} measurement</span>
   `;
 
@@ -421,7 +415,7 @@ function buildNumberTicks(min, max, targetCount) {
   return Array.from({ length: targetCount + 1 }, (_, index) => min + step * index);
 }
 
-function pickTimeTicks(data, maxTicks) {
+function pickAgeTicks(data, maxTicks) {
   if (data.length <= maxTicks) {
     return data;
   }
@@ -433,13 +427,34 @@ function pickTimeTicks(data, maxTicks) {
   for (let index = 0; index < maxTicks; index += 1) {
     const row = data[Math.round(index * step)];
 
-    if (!seen.has(row.timestampUnix)) {
+    if (!seen.has(row.ageHours)) {
       chosen.push(row);
-      seen.add(row.timestampUnix);
+      seen.add(row.ageHours);
     }
   }
 
   return chosen;
+}
+
+function formatAgeCompact(ageHours) {
+  const totalMinutes = Math.round(ageHours * 60);
+  const days = Math.floor(totalMinutes / (24 * 60));
+  const minutesLeft = totalMinutes % (24 * 60);
+  const hours = Math.floor(minutesLeft / 60);
+  const minutes = minutesLeft % 60;
+  return `Day ${days} + ${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+}
+
+function formatAgeMultiline(ageHours) {
+  const totalMinutes = Math.round(ageHours * 60);
+  const days = Math.floor(totalMinutes / (24 * 60));
+  const minutesLeft = totalMinutes % (24 * 60);
+  const hours = Math.floor(minutesLeft / 60);
+  const minutes = minutesLeft % 60;
+  return [
+    `Day ${days}`,
+    `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`
+  ];
 }
 
 function createSvgNode(tagName, attributes = {}) {
