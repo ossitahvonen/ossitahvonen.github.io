@@ -13,6 +13,10 @@
   { "age_hours": 295.416667, "age_days": 12.309028, "measure_g": 3320, "weight_kg": 3.320, "source": "Home" },
   { "age_hours": 310.250000, "age_days": 12.927083, "measure_g": 3308, "weight_kg": 3.308, "source": "Home" },
   { "age_hours": 323.250000, "age_days": 13.468750, "measure_g": 3406, "weight_kg": 3.406, "source": "Home" },
-  { "age_hours": 333.416667, "age_days": 13.892361, "measure_g": 3442, "weight_kg": 3.442, "source": "Home" }
+  { "age_hours": 333.416667, "age_days": 13.892361, "measure_g": 3442, "weight_kg": 3.442, "source": "Home" },
+  { "age_hours": 346.916667, "age_days": 14.454861, "measure_g": 3370, "weight_kg": 3.370, "source": "Home" },
+  { "age_hours": 360.750000, "age_days": 15.031250, "measure_g": 3500, "weight_kg": 3.500, "source": "Home" },
+  { "age_hours": 370.916667, "age_days": 15.454861, "measure_g": 3460, "weight_kg": 3.460, "source": "Home" },
+  { "age_hours": 384.216667, "age_days": 16.009028, "measure_g": 3420, "weight_kg": 3.420, "source": "Home" }
 ]
 
