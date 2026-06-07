@@ -17,6 +17,8 @@
   { "age_hours": 346.916667, "age_days": 14.454861, "measure_g": 3370, "weight_kg": 3.370, "source": "Home" },
   { "age_hours": 360.750000, "age_days": 15.031250, "measure_g": 3500, "weight_kg": 3.500, "source": "Home" },
   { "age_hours": 370.916667, "age_days": 15.454861, "measure_g": 3460, "weight_kg": 3.460, "source": "Home" },
-  { "age_hours": 384.216667, "age_days": 16.009028, "measure_g": 3420, "weight_kg": 3.420, "source": "Home" }
+  { "age_hours": 384.216667, "age_days": 16.009028, "measure_g": 3420, "weight_kg": 3.420, "source": "Home" },
+  { "age_hours": 394.916667, "age_days": 16.454861, "measure_g": 3560, "weight_kg": 3.560, "source": "Home" },
+  { "age_hours": 408.066667, "age_days": 17.002778, "measure_g": 3530, "weight_kg": 3.530, "source": "Home" }
 ]
 
