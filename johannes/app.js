@@ -7,16 +7,16 @@ const statLatest = document.querySelector("#stat-latest");
 const statLatestFoot = document.querySelector("#stat-latest-foot");
 const statFirst = document.querySelector("#stat-first");
 const statFirstFoot = document.querySelector("#stat-first-foot");
-const statLowest = document.querySelector("#stat-lowest");
-const statLowestFoot = document.querySelector("#stat-lowest-foot");
-const statCount = document.querySelector("#stat-count");
-const statCountFoot = document.querySelector("#stat-count-foot");
+const statDaily = document.querySelector("#stat-daily");
+const statDailyFoot = document.querySelector("#stat-daily-foot");
+const statWeekly = document.querySelector("#stat-weekly");
+const statWeeklyFoot = document.querySelector("#stat-weekly-foot");
 const chartKicker = document.querySelector("#chart-kicker");
 const chartTitle = document.querySelector("#chart-title");
 
 const state = {
   source: "All",
-  unit: "kg"
+  unit: "g"
 };
 
 const chartBox = {
@@ -117,31 +117,29 @@ function renderStats(data) {
     statLatestFoot.textContent = "No data";
     statFirst.textContent = "--";
     statFirstFoot.textContent = "No data";
-    statLowest.textContent = "--";
-    statLowestFoot.textContent = "No data";
-    statCount.textContent = "0";
-    statCountFoot.textContent = "Measurements shown";
+    statDaily.textContent = "--";
+    statDailyFoot.textContent = "No data";
+    statWeekly.textContent = "--";
+    statWeeklyFoot.textContent = "No data";
     return;
   }
 
   const latest = data[data.length - 1];
   const first = data[0];
-  const lowest = data.reduce((winner, row) => {
-    return row.measureG < winner.measureG ? row : winner;
-  }, data[0]);
-
   const latestValue = getUnitValue(latest);
-  const firstDelta = getUnitValue(latest) - getUnitValue(first);
-  const lowestDelta = getUnitValue(latest) - getUnitValue(lowest);
+  const firstValue = getUnitValue(first);
+  const firstDelta = latestValue - firstValue;
+  const averagePerDay = calculateAverageDailyGrowth(data, state.unit);
+  const averageLastWeek = calculateAverageGrowthLastWeek(data, state.unit);
 
   statLatest.textContent = shortValue[state.unit](latestValue);
   statLatestFoot.textContent = `Age ${formatAgeCompact(latest.ageHours)}`;
   statFirst.textContent = formatDelta(firstDelta, state.unit);
-  statFirstFoot.textContent = "Since birth";
-  statLowest.textContent = formatDelta(lowestDelta, state.unit);
-  statLowestFoot.textContent = `Lowest at age ${formatAgeCompact(lowest.ageHours)}`;
-  statCount.textContent = String(data.length);
-  statCountFoot.textContent = sourceLabel[state.source];
+  statFirstFoot.textContent = "Since first shown";
+  statDaily.textContent = formatRate(averagePerDay, state.unit);
+  statDailyFoot.textContent = "Across shown range";
+  statWeekly.textContent = formatRate(averageLastWeek, state.unit);
+  statWeeklyFoot.textContent = averageLastWeek === null ? "Need more data" : "Trailing 7 days";
 }
 
 function renderChart(data) {
@@ -395,8 +393,8 @@ function hideTooltip() {
   tooltip.hidden = true;
 }
 
-function getUnitValue(row) {
-  return state.unit === "kg" ? row.weightKg : row.measureG;
+function getUnitValue(row, unit = state.unit) {
+  return unit === "kg" ? row.weightKg : row.measureG;
 }
 
 function formatDelta(value, unit) {
@@ -404,6 +402,86 @@ function formatDelta(value, unit) {
   const sign = rounded > 0 ? "+" : rounded < 0 ? "-" : "";
   const absolute = Math.abs(rounded);
   return `${sign}${unit === "kg" ? absolute.toFixed(2) : absolute} ${unit}`;
+}
+
+function formatRate(value, unit) {
+  if (value === null) {
+    return "--";
+  }
+
+  const rounded = unit === "kg" ? Number(value.toFixed(2)) : Math.round(value);
+  const sign = rounded > 0 ? "+" : rounded < 0 ? "-" : "";
+  const absolute = Math.abs(rounded);
+  return `${sign}${unit === "kg" ? absolute.toFixed(2) : absolute} ${unit}/day`;
+}
+
+function calculateAverageDailyGrowth(data, unit) {
+  if (data.length < 2) {
+    return null;
+  }
+
+  const first = data[0];
+  const latest = data[data.length - 1];
+  const elapsedDays = (latest.ageHours - first.ageHours) / 24;
+
+  if (elapsedDays <= 0) {
+    return null;
+  }
+
+  return (getUnitValue(latest, unit) - getUnitValue(first, unit)) / elapsedDays;
+}
+
+function calculateAverageGrowthLastWeek(data, unit) {
+  if (data.length < 2) {
+    return null;
+  }
+
+  const latest = data[data.length - 1];
+  const latestValue = getUnitValue(latest, unit);
+  const weekHours = 24 * 7;
+  const cutoffHours = latest.ageHours - weekHours;
+  const first = data[0];
+
+  if (cutoffHours <= first.ageHours) {
+    const elapsedDays = (latest.ageHours - first.ageHours) / 24;
+    return elapsedDays > 0 ? (latestValue - getUnitValue(first, unit)) / elapsedDays : null;
+  }
+
+  const startValue = interpolateValueAtAge(data, cutoffHours, unit);
+
+  if (startValue === null) {
+    return null;
+  }
+
+  return (latestValue - startValue) / 7;
+}
+
+function interpolateValueAtAge(data, targetAgeHours, unit) {
+  for (let index = 0; index < data.length; index += 1) {
+    const row = data[index];
+
+    if (row.ageHours === targetAgeHours) {
+      return getUnitValue(row, unit);
+    }
+
+    if (row.ageHours > targetAgeHours) {
+      if (index === 0) {
+        return getUnitValue(row, unit);
+      }
+
+      const previous = data[index - 1];
+      const span = row.ageHours - previous.ageHours;
+
+      if (span <= 0) {
+        return getUnitValue(row, unit);
+      }
+
+      const ratio = (targetAgeHours - previous.ageHours) / span;
+      return getUnitValue(previous, unit) + (getUnitValue(row, unit) - getUnitValue(previous, unit)) * ratio;
+    }
+  }
+
+  return getUnitValue(data[data.length - 1], unit);
 }
 
 function buildNumberTicks(min, max, targetCount) {
