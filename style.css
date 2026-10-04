@@ -333,6 +333,10 @@ section:last-child {
   margin-top: 2px;
 }
 
+.wip-list .paper-links {
+  margin-top: 6px;
+}
+
 /* ── Teaching section ── */
 .teaching-table {
   width: 100%;

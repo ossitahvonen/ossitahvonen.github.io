@@ -104,11 +104,11 @@
       </div>
       <div class="paper-meta">Solo work</div>
       <div class="paper-links">
-        <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-jmp">
           Abstract <span class="arrow">▾</span>
         </button>
       </div>
-      <div class="abstract-panel">
+      <div class="abstract-panel" id="abstract-jmp" aria-hidden="true">
         <div class="abstract-panel-inner">
           <p class="abstract-text">Can a schooling-conditioned cash transfer improve the later employment of
             adolescents with disabilities? Finland offers a €700 monthly benefit to encourage continued
@@ -147,7 +147,7 @@
         and <a href="https://henri-salokangas.github.io/" target="_blank" rel="noopener" class="paper-link">Henri Salokangas</a>
       </div>
       <div class="paper-links">
-        <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-demography">
           Abstract <span class="arrow">▾</span>
         </button>
         <span class="separator">·</span>
@@ -157,7 +157,7 @@
         <span class="separator">·</span>
         <a href="https://centers.purdue.edu/cff/initiatives/kanteraward/" target="_blank" rel="noopener" class="paper-link">Finalist, Kanter Award 2024</a>
       </div>
-      <div class="abstract-panel">
+      <div class="abstract-panel" id="abstract-demography" aria-hidden="true">
         <div class="abstract-panel-inner">
           <p class="abstract-text">
             This article employs a couple-level framework to examine how a child's severe illness affects
@@ -199,11 +199,11 @@
         and <a href="https://www.etla.fi/en/henkilot/maczulskij-terhi/" target="_blank" rel="noopener" class="paper-link">Terhi Maczulskij</a>
       </div>
       <div class="paper-links">
-        <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-debt-burden">
           Abstract <span class="arrow">▾</span>
         </button>
       </div>
-      <div class="abstract-panel">
+      <div class="abstract-panel" id="abstract-debt-burden" aria-hidden="true">
         <div class="abstract-panel-inner">
           <p class="abstract-text">
             The paper investigates the impact of involuntary job loss on severe debt problems in Finland,
@@ -233,14 +233,14 @@
       <li>
         <div><em>The Long-Term Effects of Long-Term Psychotherapy</em></div>
         <div class="wip-coauthors">
-          with  <a href="https://tsantavirta.com/" target="_blank" rel="noopener" class="paper-link">Torsten Santavirta</a>&nbsp;&middot;&nbsp;
+          with <a href="https://tsantavirta.com/" target="_blank" rel="noopener" class="paper-link">Torsten Santavirta</a>&nbsp;&middot;&nbsp;
           <a href="tietosuojailmoitus_20251205.pdf" target="_blank" rel="noopener" class="paper-link">Data security statement</a></div>
-        <div class="paper-links" style="margin-top:6px;">
-          <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <div class="paper-links">
+          <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-psychotherapy">
             Abstract <span class="arrow">▾</span>
           </button>
         </div>
-        <div class="abstract-panel">
+        <div class="abstract-panel" id="abstract-psychotherapy" aria-hidden="true">
           <div class="abstract-panel-inner">
             <p class="abstract-text">
               While psychotherapy is proven to be an effective treatment for many mental health problems in
@@ -263,12 +263,12 @@
           <a href="https://www.etla.fi/en/henkilot/maczulskij-terhi/" target="_blank" rel="noopener" class="paper-link">Terhi Maczulskij</a>
           and Terhi Ravaska
         </div>
-        <div class="paper-links" style="margin-top:6px;">
-          <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <div class="paper-links">
+          <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-debt-enforcement">
             Abstract <span class="arrow">▾</span>
           </button>
         </div>
-        <div class="abstract-panel">
+        <div class="abstract-panel" id="abstract-debt-enforcement" aria-hidden="true">
           <div class="abstract-panel-inner">
             <p class="abstract-text">
               This paper examines labor supply responses to wage garnishment, a debt enforcement tool.
@@ -288,25 +288,16 @@
         </div>
       </li>
       <li>
-        <div><em>Health &quot;Shocks&quot;</em></div>
-        <div class="wip-coauthors">
-          with <a href="https://sites.google.com/site/mhalla1980/" target="_blank" rel="noopener" class="paper-link">Martin Halla</a>
-          and <a href="https://henri-salokangas.github.io/" target="_blank" rel="noopener" class="paper-link">Henri Salokangas</a>
-        </div>
-      </li>
-      <li>
-        <div><em>From Mother to Child Outcomes: The Role of Maternal Nurse-Led Mental Health Services</em></div>
-        <div class="wip-coauthors">with <a href="https://sites.google.com/view/jiangnan-liao/hello" target="_blank" rel="noopener" class="paper-link">Jiangnan Liao</a></div>
-      </li>
-      <li>
         <div><em>The Short- and Long-Run Consequences of Parental Violence Against Children</em></div>
-        <div class="wip-coauthors">with <a href="https://www.homepages.ucl.ac.uk/~uctppca/" target="_blank" rel="noopener" class="paper-link">Pedro Carneiro</a></div>
-        <div class="paper-links" style="margin-top:6px;">
-          <button class="abstract-btn" onclick="toggleAbstract(this)">
+        <div class="wip-coauthors">
+          with <a href="https://www.homepages.ucl.ac.uk/~uctppca/" target="_blank" rel="noopener" class="paper-link">Pedro Carneiro</a>
+        </div>
+        <div class="paper-links">
+          <button class="abstract-btn" onclick="toggleAbstract(this)" aria-expanded="false" aria-controls="abstract-parental-violence">
             Abstract <span class="arrow">▾</span>
           </button>
         </div>
-        <div class="abstract-panel">
+        <div class="abstract-panel" id="abstract-parental-violence" aria-hidden="true">
           <div class="abstract-panel-inner">
             <p class="abstract-text">
               We study the short- and long-run consequences of violence against children perpetrated by their
@@ -321,6 +312,17 @@
             </p>
           </div>
         </div>
+      </li>
+      <li>
+        <div><em>Health &quot;Shocks&quot;</em></div>
+        <div class="wip-coauthors">
+          with <a href="https://sites.google.com/site/mhalla1980/" target="_blank" rel="noopener" class="paper-link">Martin Halla</a>
+          and <a href="https://henri-salokangas.github.io/" target="_blank" rel="noopener" class="paper-link">Henri Salokangas</a>
+        </div>
+      </li>
+      <li>
+        <div><em>From Mother to Child Outcomes: The Role of Maternal Nurse-Led Mental Health Services</em></div>
+        <div class="wip-coauthors">with <a href="https://sites.google.com/view/jiangnan-liao/hello" target="_blank" rel="noopener" class="paper-link">Jiangnan Liao</a></div>
       </li>
     </ul>
 
@@ -408,6 +410,8 @@
     if (!abstractPanel) return;
     const isOpen = abstractPanel.classList.toggle('open');
     btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+    abstractPanel.setAttribute('aria-hidden', String(!isOpen));
   }
 
   // ── Carousel ──
