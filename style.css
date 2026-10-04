@@ -472,7 +472,7 @@ footer {
 
   .about-photo {
     width: 150px;
-    height: 150px;
+    height: auto;
   }
 
   .abstract-panel-inner {
