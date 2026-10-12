@@ -98,7 +98,7 @@
 
     <div class="paper">
       <div class="paper-title">
-        <a href="jmp_tahvonen.pdf" target="_blank" rel="noopener">
+        <a href="#abstract-jmp" onclick="openAbstractFromLink(this)">
           <em>Cash Transfers, Health, and the Transition to Adulthood</em>
         </a>
       </div>
@@ -414,6 +414,15 @@
     btn.classList.toggle('open', isOpen);
     btn.setAttribute('aria-expanded', String(isOpen));
     abstractPanel.setAttribute('aria-hidden', String(!isOpen));
+  }
+
+  function openAbstractFromLink(link) {
+    const paper = link.closest('.paper');
+    const btn = paper?.querySelector('.abstract-btn');
+    const abstractPanel = paper?.querySelector('.abstract-panel');
+    if (btn && abstractPanel && !abstractPanel.classList.contains('open')) {
+      toggleAbstract(btn);
+    }
   }
 
   // ── Carousel ──
